@@ -22,8 +22,9 @@
 }
 
 .List-image {
-  height: 80%;
-  width: 80%;
+  height: 75%;
+  width: 75%;
+  max-width: 600px;
   border: 8px solid;
   border-radius: 8px;
   border-color: #ffffff;
