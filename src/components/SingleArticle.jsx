@@ -15,7 +15,7 @@ const SingleArticle = () => {
       setArticle(article);
       setLoading(false);
     });
-  }, []);
+  }, [article_id]);
 
   return loading ? (
     <Loading />
