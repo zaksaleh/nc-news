@@ -1,6 +1,7 @@
 import ArticleListCard from "./ArticleListCard";
 import { fetchArticles } from "../api";
 import { useState, useEffect } from "react";
+import Loading from "./Loading";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -15,7 +16,7 @@ const Articles = () => {
   }, []);
 
   return loading ? (
-    <h2>Loading...</h2>
+    <Loading />
   ) : (
     <main className="Articles">
       <li>
