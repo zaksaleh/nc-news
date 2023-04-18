@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+  background-color: #ddc2c7;
+  background-size: 100%;
+}
+
+.Header-text {
+  margin-left: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4vh;
+  color: #ede0ed;
+  opacity: 100%;
+}
+.App-header {
+  background-color: #35344c;
+  position: fixed;
+  min-height: 7vh;
+  width: 100%;
+  display: grid;
+  justify-content: start;
+  opacity: 0.9;
+}
+
+.List-image {
+  height: 75%;
+  width: 75%;
+  max-width: 600px;
+  border: 8px solid;
+  border-radius: 8px;
+  border-color: #ffffff;
+}
+
+.List-card {
+  list-style-type: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  padding-top: 5vh;
+}
+
+.Container {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
+}
+
+.Articles {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content auto auto;
+  padding-top: 15px;
+}
+
+@media only screen and (min-width: 600px) {
+  .Articles {
+    grid-template-columns: 100%;
+    grid-template-rows: min-content auto auto;
+  }
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
