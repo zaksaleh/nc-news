@@ -1,0 +1,50 @@
+/* .Comment {
+  display: grid;
+  justify-content: start;
+  margin-inline: 5%;
+  grid-template-columns: 100%;
+  padding-top: 5vh;
+  max-width: 800px;
+} */
+
+.commentBody {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: start;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.CommentList {
+  list-style-type: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  padding-top: 5vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.ComContainer {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto auto;
+  /* margin-inline: 5%; */
+}
+
+.commentButton {
+  padding-bottom: 3%;
+}
+
+.button {
+  background-color: #ffffff;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #35344c;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #35344c;
+  color: white;
+}

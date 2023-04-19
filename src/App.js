@@ -1,10 +1,12 @@
 import "./CSS/App.css";
 import "./CSS/SingleArticle.css";
-import "./CSS/Articles.css";
+import "./CSS/Comments.css";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Articles from "./components/Articles";
 import SingleArticle from "./components/SingleArticle";
+import Comments from "./components/Comments";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           <Route path="/articles/:article_id" element={<SingleArticle />} />
         </Routes>
       </div>
+      <NavBar />
     </div>
   );
 }

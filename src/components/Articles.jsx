@@ -18,12 +18,14 @@ const Articles = () => {
   return loading ? (
     <Loading />
   ) : (
-    <main className="Articles">
-      <li>
-        {articles.map((article) => {
-          return <ArticleListCard key={article.article_id} {...article} />;
-        })}
-      </li>
+    <main>
+      <div className="grid_item_1">
+        <li>
+          {articles.map((article) => {
+            return <ArticleListCard key={article.article_id} {...article} />;
+          })}
+        </li>
+      </div>
     </main>
   );
 };
