@@ -11,7 +11,7 @@ const ArticleListCard = ({
   comment_count,
 }) => {
   return (
-    <main>
+    <main className="article_grid_container">
       <li className="List-card">
         <h2>{title}</h2>
 

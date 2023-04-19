@@ -1,3 +1,5 @@
+import CommentList from "./CommentList";
+
 const ArticleCard = ({
   article_id,
   title,

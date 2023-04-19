@@ -15,3 +15,11 @@ export const fetchArticleCard = (article_id) => {
     return data.article;
   });
 };
+
+export const fetchComments = (article_id) => {
+  return articlesAPI
+    .get(`/articles/${article_id}/comments`)
+    .then(({ data }) => {
+      return data.comments;
+    });
+};
