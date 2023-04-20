@@ -1,4 +1,3 @@
-import CommentsList from "./CommentList";
 import { useState, useEffect } from "react";
 import { fetchComments } from "../api";
 import { useParams } from "react-router-dom";

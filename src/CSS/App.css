@@ -8,17 +8,29 @@
   margin-left: 2vw;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 4vh;
-  color: #decede;
+  color: #ffffff;
   opacity: 1;
 }
+
+.Header-text:hover {
+  color: #ddc2c7;
+}
+
 .App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #35344c;
   position: fixed;
   min-height: 7vh;
+  max-height: 8vh;
   width: 100%;
-  display: grid;
-  justify-content: start;
   opacity: 0.9;
+}
+
+.search-container {
+  margin-right: 2vw;
 }
 
 .List-image {
@@ -27,23 +39,14 @@
   height: 75%;
   width: 75%;
   max-width: 600px;
+  border: 8px solid;
+  border-radius: 8px;
+  border-color: #ffffff;
   /* display: block;
   width: 100%;
   height: auto;
   opacity: 1;
   transition: 0.5s ease; */
-  border: 8px solid;
-  border-radius: 8px;
-  border-color: #ffffff;
-}
-
-.List-card {
-  list-style-type: none;
-  /* background-color: #35344c;
-  border: white solid; */
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(0, 0, 0);
-  padding-top: 5vh;
 }
 
 .Container {
@@ -84,23 +87,20 @@
   -ms-transform: translate(-50%, -50%);
 } */
 
-.article_grid_container {
+/* .article_grid_container {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: min-content auto auto;
   margin-inline: 5%;
   padding-top: 15px;
   max-width: 1100px;
-}
+} */
 
-.grid_item_1 {
-}
-
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
   .article_grid_container {
-    /* display: grid;
+    display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: min-content auto auto; */
+    grid-template-rows: min-content auto auto;
   }
 }
 
@@ -116,4 +116,19 @@
 }
 
 @media only screen and (min-width: 1200px) {
+} */
+
+.mainContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+}
+
+.List-card {
+  list-style-type: none;
+  max-width: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  padding-top: 8vh;
 }

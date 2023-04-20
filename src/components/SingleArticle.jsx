@@ -34,6 +34,7 @@ const SingleArticle = () => {
       {article.map((article) => {
         return <ArticleCard key={article.article_id} {...article} />;
       })}
+
       <section className="commentButton">
         <button className="button" onClick={handleClick}>
           View all comments

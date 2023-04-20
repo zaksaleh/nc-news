@@ -11,9 +11,9 @@ const ArticleListCard = ({
   comment_count,
 }) => {
   return (
-    <main className="article_grid_container">
+    <main>
       <li className="List-card">
-        <h2>{title}</h2>
+        <h3 className="cardTitle">{title}</h3>
 
         <div>
           <Link to={`/articles/${article_id}`}>
