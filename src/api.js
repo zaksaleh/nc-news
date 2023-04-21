@@ -31,3 +31,9 @@ export const addVotesPatch = (article_id, vote) => {
       return data.article.votes;
     });
 };
+
+export const fetchArticlesByTopic = (topic) => {
+  return articlesAPI.get(`/articles?topic=${topic}`).then(({ data }) => {
+    console.log(data);
+  });
+};
