@@ -2,28 +2,44 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { postComment } from "../api";
 
-const AddComment = ({ setComments }) => {
+const AddComment = ({ err, setErr, setComments }) => {
   const { article_id } = useParams();
-  const [body, setBody] = useState([]);
+  const [body, setBody] = useState("");
   const [username, setUsername] = useState("");
+  const [buttonDisable, setButtonDisable] = useState(false);
 
   const handlePostComment = (event) => {
     event.preventDefault();
+    setButtonDisable(true);
     const newComment = {
       username: username,
       body: body,
       votes: 0,
     };
 
-    postComment(article_id, newComment).then((addedComment) => {
-      setComments((currentComments) => {
-        return [addedComment, ...currentComments];
-      });
-    });
+    setBody([]);
+    setUsername("");
+
+    if (body.length === 0) {
+      setErr("No Information! Please try again!");
+      setButtonDisable(false);
+    } else {
+      postComment(article_id, newComment)
+        .then((addedComment) => {
+          setComments((currentComments) => {
+            setButtonDisable(false);
+            setErr(null);
+            return [addedComment, ...currentComments];
+          });
+        })
+        .catch((err) => {
+          setErr("No Information! Please try again!");
+        });
+    }
   };
 
   return (
-    <form onSubmit={handlePostComment} action="/action_page.php">
+    <form onSubmit={handlePostComment}>
       <select
         id="username"
         placeholder="username..."
@@ -40,15 +56,17 @@ const AddComment = ({ setComments }) => {
       </select>
 
       <label>
-        <input
-          type="text"
+        <textarea
+          className="text-area"
+          rows="5"
+          cols="50"
           placeholder="Add a comment..."
           name="search"
           value={body}
           onChange={(event) => setBody(event.target.value)}
         />
       </label>
-      <button className="button" type="submit">
+      <button className="button" type="submit" disabled={buttonDisable}>
         POST
       </button>
     </form>
