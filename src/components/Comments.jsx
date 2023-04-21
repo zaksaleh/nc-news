@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchComments } from "../api";
 import { useParams } from "react-router-dom";
 import CommentList from "./CommentList";
+import AddComment from "./AddComment";
 
 const Comments = () => {
   const { article_id } = useParams();
@@ -15,9 +16,13 @@ const Comments = () => {
 
   return (
     <main>
-      {comments.map((comment) => {
-        return <CommentList key={comment.comment_id} {...comment} />;
-      })}
+      <br></br>
+      <AddComment setComments={setComments} />
+      <section>
+        {comments.map((comment) => {
+          return <CommentList key={comment.comment_id} {...comment} />;
+        })}
+      </section>
     </main>
   );
 };

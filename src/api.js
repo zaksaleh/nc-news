@@ -31,3 +31,11 @@ export const addVotesPatch = (article_id, vote) => {
       return data.article.votes;
     });
 };
+
+export const postComment = (article_id, body) => {
+  return articlesAPI
+    .post(`/articles/${article_id}/comments`, body)
+    .then(({ data }) => {
+      return data.comment[0];
+    });
+};

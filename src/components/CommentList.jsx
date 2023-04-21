@@ -1,11 +1,4 @@
-const CommentList = ({
-  comment_id,
-  body,
-  article_id,
-  author,
-  votes,
-  created_at,
-}) => {
+const CommentList = ({ body, author, votes }) => {
   return (
     <main className="Comment">
       <li className="CommentList">
