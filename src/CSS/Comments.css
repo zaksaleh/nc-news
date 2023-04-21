@@ -35,15 +35,6 @@
   padding-bottom: 3%;
 }
 
-.button {
-  background-color: #ffffff;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #35344c;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
 .button:hover {
   background-color: #35344c;
   color: white;
