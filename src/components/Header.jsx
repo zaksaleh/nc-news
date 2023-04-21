@@ -8,8 +8,12 @@ const Header = () => {
       </Link>
 
       <div className="search-container">
-        <form action="/action_page.php">
-          <input type="text" placeholder="Search a topic.." name="search" />
+        <form>
+          <input
+            type="comments"
+            placeholder="Search a topic..."
+            name="search"
+          />
           <button className="button" type="submit">
             SEARCH
             {/* <i class="fa fa-search"></i> */}

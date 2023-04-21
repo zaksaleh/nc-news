@@ -32,8 +32,16 @@ export const addVotesPatch = (article_id, vote) => {
     });
 };
 
+export const postComment = (article_id, body) => {
+  return articlesAPI
+    .post(`/articles/${article_id}/comments`, body)
+    .then(({ data }) => {
+      return data.comment[0];
+    });
+
 export const fetchArticlesByTopic = (topic) => {
   return articlesAPI.get(`/articles?topic=${topic}`).then(({ data }) => {
     console.log(data);
   });
+
 };

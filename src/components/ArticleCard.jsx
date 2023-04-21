@@ -59,6 +59,7 @@ const ArticleCard = ({
           <p>Votes: {addVote}</p>
           <p>Comments: {comment_count}</p>
         </div>
+        <br></br>
       </li>
     </main>
   );
