@@ -38,10 +38,10 @@ export const postComment = (article_id, body) => {
     .then(({ data }) => {
       return data.comment[0];
     });
+};
 
 export const fetchArticlesByTopic = (topic) => {
   return articlesAPI.get(`/articles?topic=${topic}`).then(({ data }) => {
     console.log(data);
   });
-
 };

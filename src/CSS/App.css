@@ -128,11 +128,9 @@
   padding-top: 8vh;
 }
 
-
 .input[type="comments"] {
   width: 40px;
-  
-  
+}
 
 .button {
   background-color: #ffffff;
@@ -143,5 +141,4 @@
   transition-duration: 0.4s;
   cursor: pointer;
   margin: 5px;
-
 }
