@@ -17,11 +17,7 @@ const ArticleListCard = ({
 
         <div>
           <Link to={`/articles/${article_id}`}>
-            <img
-              className="List-image"
-              src={article_img_url}
-              alt="article-image"
-            />
+            <img className="List-image" src={article_img_url} alt="article" />
 
             <div className="overlay"></div>
           </Link>

@@ -41,7 +41,13 @@ export const postComment = (article_id, body) => {
 };
 
 export const fetchArticlesByTopic = (topic) => {
-  return articlesAPI.get(`/articles?topic=${topic}`).then(({ data }) => {
-    console.log(data);
-  });
+  return articlesAPI
+    .get(`/articles?topic=${topic}`)
+    .then(({ data }) => {
+      // console.log(data);
+      return data.articles;
+    })
+    .catch((error) => {
+      console.log(error.response);
+    });
 };
