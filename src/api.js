@@ -51,3 +51,9 @@ export const fetchArticlesByTopic = (topic) => {
       console.log(error.response);
     });
 };
+
+export const fetchAllUsers = () => {
+  return articlesAPI.get("/users").then(({ data }) => {
+    return data.users;
+  });
+};
