@@ -24,27 +24,27 @@ const UserSelect = ({ user, setUser }) => {
     });
   }, []);
 
-  console.log(registeredUsers);
-
   return loading ? (
     <Loading />
   ) : (
     <main>
-      <section>
-        <h2>PLEASE SELECT A USER</h2>
+      <section className="Welcome-layout">
+        <section>
+          <h2>PLEASE SELECT A USER</h2>
+        </section>
+        <li className="mainContainer">
+          {registeredUsers.map((user) => {
+            return (
+              <UserCard
+                key={user.username}
+                username={user.username}
+                avatar={user.avatar_url}
+                loginUser={LoginUser}
+              />
+            );
+          })}
+        </li>
       </section>
-      <li className="mainContainer">
-        {registeredUsers.map((user) => {
-          return (
-            <UserCard
-              key={user.username}
-              username={user.username}
-              avatar={user.avatar_url}
-              loginUser={LoginUser}
-            />
-          );
-        })}
-      </li>
     </main>
   );
 };

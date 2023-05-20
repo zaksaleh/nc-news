@@ -19,13 +19,14 @@
 }
 
 .App-header {
-  opacity: 0.95;
+  /* overflow: hidden; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: #35344c;
   position: fixed;
+  opacity: 0.95;
   min-height: 7vh;
   max-height: 8vh;
   width: 100%;
@@ -59,8 +60,20 @@
   color: #ddc2c7;
 }
 
+.navbar-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 10px;
+}
+
 .search-container {
   margin-right: 2vw;
+}
+
+.Loading-icon {
+  width: 1%;
+  margin: 20% 50%;
 }
 
 .List-image {
@@ -156,4 +169,14 @@
   transition-duration: 0.4s;
   cursor: pointer;
   margin: 5px;
+}
+
+.loading-layout {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.Welcome-layout {
+  display: flex;
+  flex-direction: column;
 }
