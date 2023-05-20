@@ -1,10 +1,11 @@
+import CircularProgress from "@mui/material/CircularProgress";
+
 const Loading = () => {
-  // <main className="App">
-  //   <h1>Loading . . .</h1>
-  // </main>;
-  <main>
-    <li className="mainContainer"></li>
-  </main>;
+  return (
+    <main className="loading-layout">
+      <CircularProgress color="secondary" className="Loading-icon" />
+    </main>
+  );
 };
 
 export default Loading;
