@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchArticlesByTopic } from "../api";
 
 const Header = () => {
   const [topic, setTopic] = useState("");
   const navigate = useNavigate();
-
-  let topicData;
 
   const handleTopicSubmit = (event) => {
     event.preventDefault();

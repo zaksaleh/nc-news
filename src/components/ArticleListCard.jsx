@@ -1,4 +1,14 @@
 import { Link } from "react-router-dom";
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  Avatar,
+  CardActionArea,
+  Badge,
+} from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const ArticleListCard = ({
   article_id,
@@ -11,25 +21,37 @@ const ArticleListCard = ({
   comment_count,
 }) => {
   return (
-    <main>
-      <li className="List-card">
-        <h3 className="cardTitle">{title}</h3>
-
-        <div>
+    <main className="mui-card">
+      <Card variant="outlined" style={{ width: "100%", height: "90%" }}>
+        <section className="card-header">
+          <CardHeader
+            title={title}
+            subheader={`${author} posted on: ${created_at} in ${topic}`}
+          />
+        </section>
+        <CardActionArea>
           <Link to={`/articles/${article_id}`}>
-            <img className="List-image" src={article_img_url} alt="article" />
-
-            <div className="overlay"></div>
+            <CardMedia
+              component="img"
+              height="194"
+              image={article_img_url}
+              alt="article-image"
+            />
           </Link>
-        </div>
-
-        <div className="Container">
-          <p>Topic: {topic}</p>
-          <p>Author: {author}</p>
-          <p>Votes: {votes}</p>
-          <p>Comments: {comment_count}</p>
-        </div>
-      </li>
+        </CardActionArea>
+        <section className="icon">
+          <Badge
+            badgeContent={votes}
+            color="secondary"
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <FavoriteIcon sx={{ color: "red" }} />
+          </Badge>
+        </section>
+      </Card>
     </main>
   );
 };

@@ -19,13 +19,13 @@
 }
 
 .App-header {
-  /* overflow: hidden; */
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: #35344c;
-  position: fixed;
+  /* position: fixed; */
   opacity: 0.95;
   min-height: 7vh;
   max-height: 8vh;
@@ -76,24 +76,32 @@
   margin: 20% 50%;
 }
 
-.List-image {
-  height: auto;
-  opacity: 1;
-  height: 75%;
-  width: 75%;
-  max-width: 600px;
-  border: 8px solid;
-  border-radius: 8px;
-  border-color: #ffffff;
-  /* display: block;
-  width: 100%;
-  height: auto;
-  opacity: 1;
-  transition: 0.5s ease; */
+.article-home {
+  padding-top: 2%;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
-.List-image:hover {
+.mui-card {
+  border-color: #ffffff;
+}
+
+.mui-card:hover {
   opacity: 0.8;
+}
+
+.card-header {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  padding-bottom: 2%;
+  max-height: 30%;
+}
+
+.icon {
+  display: flex;
+  justify-content: start;
+  margin-left: 2%;
 }
 
 .User-avatar-card {

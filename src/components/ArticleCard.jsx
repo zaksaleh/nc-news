@@ -40,7 +40,11 @@ const ArticleCard = ({
       <li className="SingleListCard">
         <h2>{title}</h2>
 
-        <img className="List-image" src={article_img_url} alt="article-image" />
+        <img
+          className="single-image"
+          src={article_img_url}
+          alt="article-image"
+        />
 
         <section className="likeContainer">
           {err ? <p>{err}</p> : null}

@@ -2,6 +2,7 @@ import ArticleListCard from "./ArticleListCard";
 import { fetchArticles } from "../api";
 import { useState, useEffect } from "react";
 import Loading from "./Loading";
+import { Grid } from "@mui/material";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -18,12 +19,25 @@ const Articles = () => {
   return loading ? (
     <Loading />
   ) : (
-    <main>
-      <li className="mainContainer">
+    <main className="article-home">
+      <Grid container rowSpacing={4} columnSpacing={4}>
         {articles.map((article) => {
-          return <ArticleListCard key={article.article_id} {...article} />;
+          return (
+            <Grid
+              key={article.article_id}
+              item
+              style={{ display: "flex" }}
+              xs={12}
+              sm={6}
+              md={6}
+              lg={4}
+              xl={3}
+            >
+              <ArticleListCard key={article.article_id} {...article} />
+            </Grid>
+          );
         })}
-      </li>
+      </Grid>
     </main>
   );
 };
