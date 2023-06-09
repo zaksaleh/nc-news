@@ -3,6 +3,7 @@ import { fetchArticlesByTopic } from "../api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
+import { Grid } from "@mui/material";
 
 const Topics = () => {
   const { topic } = useParams();
@@ -20,14 +21,26 @@ const Topics = () => {
   return loading ? (
     <Loading />
   ) : (
-    <main>
-      <li className="mainContainer">
+    <main className="article-home">
+      <Grid container rowSpacing={4} columnSpacing={4}>
         {topicArticles.map((article) => {
           if (article.topic === topic) {
-            return <ArticleListCard key={article.article_id} {...article} />;
+            return (
+              <Grid
+                key={article.article_id}
+                item
+                style={{ display: "flex" }}
+                xs={12}
+                sm={6}
+                md={6}
+                lg={4}
+              >
+                <ArticleListCard key={article.article_id} {...article} />
+              </Grid>
+            );
           }
         })}
-      </li>
+      </Grid>
     </main>
   );
 };
