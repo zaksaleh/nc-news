@@ -34,6 +34,7 @@ const Topics = () => {
                 sm={6}
                 md={6}
                 lg={4}
+                xl={3}
               >
                 <ArticleListCard key={article.article_id} {...article} />
               </Grid>

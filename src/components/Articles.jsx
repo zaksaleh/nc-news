@@ -20,7 +20,13 @@ const Articles = () => {
     <Loading />
   ) : (
     <main className="article-home">
-      <Grid container rowSpacing={4} columnSpacing={4}>
+      <Grid
+        container
+        rowSpacing={4}
+        columnSpacing={4}
+        justifyContent={{ display: "flex-start" }}
+        alignContent={{ display: "space-between" }}
+      >
         {articles.map((article) => {
           return (
             <Grid
@@ -29,8 +35,8 @@ const Articles = () => {
               style={{ display: "flex" }}
               xs={12}
               sm={6}
-              md={6}
-              lg={4}
+              md={4}
+              lg={3}
               xl={3}
             >
               <ArticleListCard key={article.article_id} {...article} />
