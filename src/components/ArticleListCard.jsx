@@ -25,15 +25,17 @@ const ArticleListCard = ({
   return (
     <main className="mui-card">
       <Card style={{ width: "100%", height: "100%" }}>
-        <CardActionArea>
-          <Link to={`/articles/${article_id}`}>
-            <CardMedia
-              component="img"
-              image={article_img_url}
-              alt="article-image"
-            />
-          </Link>
-        </CardActionArea>
+        <body className="image-link">
+          <CardActionArea>
+            <Link to={`/articles/${article_id}`}>
+              <CardMedia
+                component="img"
+                image={article_img_url}
+                alt="article-image"
+              />
+            </Link>
+          </CardActionArea>
+        </body>
         <header className="card-header">
           <CardHeader
             height="150"

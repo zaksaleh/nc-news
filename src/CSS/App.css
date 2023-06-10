@@ -82,11 +82,15 @@
   margin-right: 3%;
 }
 
-.mui-card {
-  /* padding-bottom: 2%; */
+/* .mui-card {
+
+} */
+
+.image-link {
+  position: relative;
 }
 
-.mui-card:hover {
+.image-link:hover {
   opacity: 0.8;
 }
 
