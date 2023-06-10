@@ -3,12 +3,14 @@ import {
   Card,
   CardHeader,
   CardMedia,
+  Typography,
   CardContent,
   Avatar,
   CardActionArea,
   Badge,
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import CommentIcon from "@mui/icons-material/Comment";
 
 const ArticleListCard = ({
   article_id,
@@ -22,24 +24,34 @@ const ArticleListCard = ({
 }) => {
   return (
     <main className="mui-card">
-      <Card variant="outlined" style={{ width: "100%", height: "90%" }}>
-        <section className="card-header">
-          <CardHeader
-            title={title}
-            subheader={`${author} posted on: ${created_at} in ${topic}`}
-          />
-        </section>
+      <Card style={{ width: "100%", height: "100%" }}>
         <CardActionArea>
           <Link to={`/articles/${article_id}`}>
             <CardMedia
               component="img"
-              height="194"
               image={article_img_url}
               alt="article-image"
             />
           </Link>
         </CardActionArea>
-        <section className="icon">
+        <header className="card-header">
+          <CardHeader
+            height="150"
+            titleTypographyProps={{
+              fontSize: "large",
+              fontWeight: "bold",
+              textAlign: "left",
+            }}
+            title={title}
+            subheaderTypographyProps={{
+              variant: "caption",
+              textAlign: "left",
+              color: "purple",
+            }}
+            subheader={`${author} posted on: ${created_at} in ${topic}`}
+          />
+        </header>
+        <section className="icon-container">
           <Badge
             badgeContent={votes}
             color="secondary"
@@ -49,6 +61,17 @@ const ArticleListCard = ({
             }}
           >
             <FavoriteIcon sx={{ color: "red" }} />
+          </Badge>
+
+          <Badge
+            badgeContent={comment_count}
+            color="secondary"
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+          >
+            <CommentIcon sx={{ color: "blue" }} />
           </Badge>
         </section>
       </Card>

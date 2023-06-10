@@ -40,7 +40,7 @@
   align-items: center;
   background-color: #35344c;
   position: fixed;
-  opacity: 0.95;
+  opacity: 100%;
   bottom: 0;
   min-height: 5vh;
   max-height: 6vh;
@@ -83,7 +83,7 @@
 }
 
 .mui-card {
-  border-color: #ffffff;
+  /* padding-bottom: 2%; */
 }
 
 .mui-card:hover {
@@ -92,16 +92,16 @@
 
 .card-header {
   display: flex;
-  justify-content: start;
-  align-items: flex-start;
-  padding-bottom: 2%;
-  max-height: 30%;
 }
 
-.icon {
+.icon-container {
   display: flex;
-  justify-content: start;
-  margin-left: 2%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding-top: 2%;
 }
 
 .User-avatar-card {
