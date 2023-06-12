@@ -6,7 +6,7 @@ import { Avatar } from "@mui/material";
 const NavBar = () => {
   const { user, isLoggedIn } = useContext(UserContext);
 
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="navbar">
