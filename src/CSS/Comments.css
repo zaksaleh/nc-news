@@ -62,3 +62,10 @@
   background-color: #35344c;
   color: white;
 }
+
+.plus-comment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+}

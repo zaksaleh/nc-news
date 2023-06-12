@@ -80,7 +80,7 @@ const ArticleCard = ({
               horizontal: "right",
             }}
           >
-            <FavoriteIcon sx={{ color: "red" }} />
+            <FavoriteIcon sx={{ color: "#bb2e2e" }} />
           </Badge>
         </header>
 
@@ -95,10 +95,10 @@ const ArticleCard = ({
         />
         <section className="like-dislike-container">
           <IconButton onClick={handleLike}>
-            <ThumbUpIcon sx={{ color: "purple" }} />
+            <ThumbUpIcon sx={{ color: "#35344c" }} />
           </IconButton>
           <IconButton onClick={handleDislike}>
-            <ThumbDownIcon sx={{ color: "purple" }} />
+            <ThumbDownIcon sx={{ color: "#35344c" }} />
           </IconButton>
         </section>
 

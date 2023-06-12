@@ -25,7 +25,7 @@ const ArticleListCard = ({
   return (
     <main className="mui-card">
       <Card style={{ width: "100%", height: "100%" }}>
-        <body className="image-link">
+        <section className="image-link">
           <CardActionArea>
             <Link to={`/articles/${article_id}`}>
               <CardMedia
@@ -35,7 +35,7 @@ const ArticleListCard = ({
               />
             </Link>
           </CardActionArea>
-        </body>
+        </section>
         <header className="card-header">
           <CardHeader
             height="150"
@@ -62,7 +62,7 @@ const ArticleListCard = ({
               horizontal: "right",
             }}
           >
-            <FavoriteIcon sx={{ color: "red" }} />
+            <FavoriteIcon sx={{ color: "#d92e2e" }} />
           </Badge>
 
           <Badge
@@ -73,7 +73,7 @@ const ArticleListCard = ({
               horizontal: "left",
             }}
           >
-            <CommentIcon sx={{ color: "blue" }} />
+            <CommentIcon sx={{ color: "#2c3ba6" }} />
           </Badge>
         </section>
       </Card>

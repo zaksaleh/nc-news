@@ -10,12 +10,11 @@ const AddComment = ({ err, setErr, setComments }) => {
   const { article_id } = useParams();
   const { user, isLoggedIn } = useContext(UserContext);
   const [body, setBody] = useState("");
-  const [username, setUsername] = useState("");
   const [buttonDisable, setButtonDisable] = useState(false);
 
   const handlePlaceholder = () => {
     if (isLoggedIn) {
-      return "Please log in to add a comment...";
+      return "Please sign in to add a comment...";
     } else {
       return "Add a comment...";
     }
@@ -23,15 +22,15 @@ const AddComment = ({ err, setErr, setComments }) => {
 
   const handlePostComment = (event) => {
     event.preventDefault();
+    console.log(user);
     setButtonDisable(true);
     const newComment = {
-      username: username,
+      username: user.username,
       body: body,
       votes: 0,
     };
 
     setBody([]);
-    setUsername("");
 
     if (body.length === 0) {
       setErr("No Information! Please try again!");
@@ -39,7 +38,6 @@ const AddComment = ({ err, setErr, setComments }) => {
     } else {
       postComment(article_id, newComment)
         .then((addedComment) => {
-          console.log("here here");
           setComments((currentComments) => {
             setButtonDisable(false);
             setErr(null);
@@ -76,10 +74,17 @@ const AddComment = ({ err, setErr, setComments }) => {
           value={body}
           onChange={(event) => setBody(event.target.value)}
         />
+        <section className="plus-comment">
+          <IconButton
+            type="submit"
+            sx={{
+              color: "#35344c",
+            }}
+          >
+            <AddBoxIcon />
+          </IconButton>
+        </section>
       </form>
-      <IconButton type="submit">
-        <AddBoxIcon sx={{ color: "secondary" }} />
-      </IconButton>
     </main>
     // <form onSubmit={handlePostComment}>
     //   <select
