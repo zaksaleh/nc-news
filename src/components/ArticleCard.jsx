@@ -1,5 +1,21 @@
 import { useState, useEffect } from "react";
 import { addVotesPatch } from "../api";
+import Comments from "./Comments";
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  Typography,
+  CardContent,
+  IconButton,
+  Avatar,
+  CardActionArea,
+  Badge,
+} from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import CommentIcon from "@mui/icons-material/Comment";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 
 const ArticleCard = ({
   article_id,
@@ -14,6 +30,13 @@ const ArticleCard = ({
 }) => {
   const [addVote, setAddVote] = useState(votes);
   const [err, setErr] = useState(null);
+  const [viewComments, setViewComments] = useState(false);
+
+  const handleViewComments = (event) => {
+    setViewComments((viewComments) => {
+      return !viewComments;
+    });
+  };
 
   const handleLike = (event) => {
     setAddVote((vote) => vote + 1);
@@ -37,35 +60,90 @@ const ArticleCard = ({
 
   return (
     <main>
-      <li className="SingleListCard">
-        <h2>{title}</h2>
+      <Card sx={{ minWidth: 150, maxWidth: 800, minHeight: 800 }}>
+        <header>
+          <CardHeader
+            height="100"
+            titleTypographyProps={{
+              variant: "h5",
+              fontWeight: "bold",
+              textAlign: "left",
+            }}
+            title={title}
+            subheaderTypographyProps={{
+              variant: "caption",
+              textAlign: "left",
+              color: "purple",
+            }}
+            subheader={`${author} posted on: ${created_at} in ${topic}`}
+          />
+        </header>
 
-        <img
-          className="single-image"
-          src={article_img_url}
-          alt="article-image"
+        <CardMedia
+          component="img"
+          image={article_img_url}
+          alt="single-article-image"
+          height="400"
+          sx={{
+            objectFit: "contain",
+          }}
         />
+        <section className="icon-container">
+          <Badge
+            badgeContent={addVote}
+            color="secondary"
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <IconButton onClick={handleLike}>
+              <FavoriteIcon sx={{ color: "red" }} />
+            </IconButton>
+          </Badge>
 
-        <section className="likeContainer">
-          {err ? <p>{err}</p> : null}
-          <button className="button" onClick={handleLike}>
-            LIKE
-          </button>
-          <button className="button" onClick={handleDislike}>
-            DISLIKE
-          </button>
+          <Badge
+            badgeContent={comment_count}
+            color="secondary"
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+          >
+            <IconButton onClick={handleViewComments}>
+              <CommentIcon sx={{ color: "blue" }} />
+            </IconButton>
+          </Badge>
         </section>
 
-        <p className="body">{body}</p>
-        <div className="Container">
-          <p>Topic: {topic}</p>
-          <p>Author: {author}</p>
-          <p>Votes: {addVote}</p>
-          <p>Comments: {comment_count}</p>
-        </div>
-        <br></br>
-      </li>
+        <CardContent>
+          <Typography paragraph align="left">
+            {body}
+          </Typography>
+        </CardContent>
+      </Card>
     </main>
+
+    //     <section className="likeContainer">
+    //       {err ? <p>{err}</p> : null}
+    //       <button className="button" onClick={handleLike}>
+    //         LIKE
+    //       </button>
+    //       <button className="button" onClick={handleDislike}>
+    //         DISLIKE
+    //       </button>
+    //     </section>
+
+    //     <p className="body">{body}</p>
+    //     <div className="Container">
+    //       <p>Topic: {topic}</p>
+    //       <p>Author: {author}</p>
+    //       <p>Votes: {addVote}</p>
+    //       <p>Comments: {comment_count}</p>
+    //     </div>
+    //     <br></br>
+    //   </li>
+    // </main>
   );
 };
 
