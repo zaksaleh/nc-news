@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchAllUsers } from "../api";
 import Loading from "./Loading";
 import UserCard from "./UserCard";
+import { Grid } from "@mui/material";
 
 const UserSelect = ({ user, setUser }) => {
   const [registeredUsers, setRegisteredUsers] = useState([]);
@@ -28,22 +29,35 @@ const UserSelect = ({ user, setUser }) => {
     <Loading />
   ) : (
     <main>
-      <section className="Welcome-layout">
+      <section>
         <section>
           <h2>PLEASE SELECT A USER</h2>
         </section>
-        <li className="mainContainer">
-          {registeredUsers.map((user) => {
-            return (
-              <UserCard
-                key={user.username}
-                username={user.username}
-                avatar={user.avatar_url}
-                loginUser={LoginUser}
-              />
-            );
-          })}
-        </li>
+        <section className="user-select">
+          <Grid container rowSpacing={4} columnSpacing={4}>
+            {registeredUsers.map((user) => {
+              return (
+                <Grid
+                  key={user.username}
+                  item
+                  style={{ display: "flex" }}
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                >
+                  <UserCard
+                    key={user.username}
+                    username={user.username}
+                    avatar={user.avatar_url}
+                    loginUser={LoginUser}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </section>
       </section>
     </main>
   );

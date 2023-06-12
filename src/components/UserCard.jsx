@@ -1,3 +1,5 @@
+import { Card, CardHeader, CardMedia } from "@mui/material";
+
 const UserCard = ({ username, loginUser, avatar }) => {
   const handleClick = () => {
     loginUser(username);
@@ -5,18 +7,24 @@ const UserCard = ({ username, loginUser, avatar }) => {
 
   return (
     <main>
-      <li className="List-card">
-        <section onClick={handleClick}>
-          <h2>{username}</h2>
-          <img
-            className="User-avatar-card"
-            src={avatar}
-            alt="avatar_image"
-            width="300"
-            height="auto"
+      <section onClick={handleClick}>
+        <Card
+          sx={{ minWidth: 300, maxWidth: 300, minHeight: 270, maxHeight: 270 }}
+        >
+          <CardHeader title={username} />
+          <CardMedia
+            className="user-avatar"
+            component="img"
+            image={avatar}
+            alt="avatar-image"
+            height="250"
+            sx={{
+              marginTop: -5,
+              objectFit: "contain",
+            }}
           />
-        </section>
-      </li>
+        </Card>
+      </section>
     </main>
   );
 };
