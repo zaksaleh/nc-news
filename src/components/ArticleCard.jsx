@@ -11,7 +11,9 @@ import {
   Avatar,
   CardActionArea,
   Badge,
+  TextField,
 } from "@mui/material";
+
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CommentIcon from "@mui/icons-material/Comment";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
@@ -30,13 +32,6 @@ const ArticleCard = ({
 }) => {
   const [addVote, setAddVote] = useState(votes);
   const [err, setErr] = useState(null);
-  const [viewComments, setViewComments] = useState(false);
-
-  const handleViewComments = (event) => {
-    setViewComments((viewComments) => {
-      return !viewComments;
-    });
-  };
 
   const handleLike = (event) => {
     setAddVote((vote) => vote + 1);
@@ -61,7 +56,7 @@ const ArticleCard = ({
   return (
     <main>
       <Card sx={{ minWidth: 150, maxWidth: 800, minHeight: 800 }}>
-        <header>
+        <header className="header-container">
           <CardHeader
             height="100"
             titleTypographyProps={{
@@ -77,6 +72,16 @@ const ArticleCard = ({
             }}
             subheader={`${author} posted on: ${created_at} in ${topic}`}
           />
+          <Badge
+            badgeContent={addVote}
+            color="secondary"
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <FavoriteIcon sx={{ color: "red" }} />
+          </Badge>
         </header>
 
         <CardMedia
@@ -88,32 +93,13 @@ const ArticleCard = ({
             objectFit: "contain",
           }}
         />
-        <section className="icon-container">
-          <Badge
-            badgeContent={addVote}
-            color="secondary"
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-          >
-            <IconButton onClick={handleLike}>
-              <FavoriteIcon sx={{ color: "red" }} />
-            </IconButton>
-          </Badge>
-
-          <Badge
-            badgeContent={comment_count}
-            color="secondary"
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-          >
-            <IconButton onClick={handleViewComments}>
-              <CommentIcon sx={{ color: "blue" }} />
-            </IconButton>
-          </Badge>
+        <section className="like-dislike-container">
+          <IconButton onClick={handleLike}>
+            <ThumbUpIcon sx={{ color: "purple" }} />
+          </IconButton>
+          <IconButton onClick={handleDislike}>
+            <ThumbDownIcon sx={{ color: "purple" }} />
+          </IconButton>
         </section>
 
         <CardContent>
@@ -121,6 +107,17 @@ const ArticleCard = ({
             {body}
           </Typography>
         </CardContent>
+        {/* <Badge
+          badgeContent={comment_count}
+          color="secondary"
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          <CommentIcon sx={{ color: "blue" }} />
+        </Badge> */}
+        <Comments />
       </Card>
     </main>
 

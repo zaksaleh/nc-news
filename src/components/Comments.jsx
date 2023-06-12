@@ -17,10 +17,8 @@ const Comments = () => {
   }, [article_id]);
 
   return (
-    <main>
-      <br></br>
-      {err ? <h3>{err}</h3> : null}
-      <br></br>
+    <main className="comment-container">
+      <section>{err ? <h3>{err}</h3> : null}</section>
       <AddComment err={err} setErr={setErr} setComments={setComments} />
       <section>
         {comments.map((comment) => {
