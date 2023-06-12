@@ -29,13 +29,15 @@ const SingleArticle = () => {
   return loading ? (
     <Loading />
   ) : (
-    <main className="Article">
+    <main className="article">
       <Grid
         container
         spacing={0}
         direction="column"
         alignItems={"center"}
         justifyContent="center"
+        // marginLeft="3%"
+        // marginRight="3%"
       >
         {article.map((article) => {
           return (

@@ -55,7 +55,7 @@ const ArticleCard = ({
 
   return (
     <main>
-      <Card sx={{ minWidth: 150, maxWidth: 800, minHeight: 800 }}>
+      <Card sx={{ maxWidth: 800, minHeight: 800 }}>
         <header className="header-container">
           <CardHeader
             height="100"

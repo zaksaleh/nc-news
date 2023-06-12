@@ -34,7 +34,14 @@ const UserSelect = ({ user, setUser }) => {
           <h2>PLEASE SELECT A USER</h2>
         </section>
         <section className="user-select">
-          <Grid container rowSpacing={4} columnSpacing={4}>
+          <Grid
+            container
+            rowSpacing={3}
+            columnSpacing={3}
+            direction="row"
+            alignItems={"center"}
+            justifyContent="center"
+          >
             {registeredUsers.map((user) => {
               return (
                 <Grid
