@@ -1,12 +1,3 @@
-/* .Comment {
-  display: grid;
-  justify-content: start;
-  margin-inline: 5%;
-  grid-template-columns: 100%;
-  padding-top: 5vh;
-  max-width: 800px;
-} */
-
 .text-area {
   width: 100%;
   border: none;
@@ -38,34 +29,27 @@
   margin-right: 10vw;
 }
 
-.CommentList {
-  list-style-type: none;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  padding-top: 5vh;
-  margin-left: 5vw;
-  margin-right: 5vw;
-}
-
-.ComContainer {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: auto auto auto;
-  /* margin-inline: 5%; */
-}
-
-.commentButton {
+/* .commentButton {
   padding-bottom: 3%;
 }
 
 .button:hover {
   background-color: #35344c;
   color: white;
-}
+} */
 
 .plus-comment {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
+}
+
+.comment-votes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 1%;
+  margin-bottom: 1%;
 }
