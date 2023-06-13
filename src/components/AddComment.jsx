@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { postComment } from "../api";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
-import { TextField, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 
 const AddComment = ({ err, setErr, setComments }) => {
@@ -53,18 +53,6 @@ const AddComment = ({ err, setErr, setComments }) => {
   return (
     <main>
       <form className="comments-form" onSubmit={handlePostComment}>
-        {/* <TextField
-          id="outlined-text"
-          multiline
-          rows={3}
-          sx={{
-            width: "80%",
-            paddingBottom: "4.8%",
-          }}
-          color="secondary"
-          placeholder="Add a comment..."
-          // margin="normal"
-        /> */}
         <textarea
           className="text-area"
           rows="5"
@@ -86,29 +74,6 @@ const AddComment = ({ err, setErr, setComments }) => {
         </section>
       </form>
     </main>
-    // <form onSubmit={handlePostComment}>
-    //   <select
-    //     id="username"
-    //     placeholder="username..."
-    //     value={username}
-    //     onChange={(event) => setUsername(event.target.value)}
-    //   >
-
-    //   <label>
-    //     <textarea
-    //       className="text-area"
-    //       rows="5"
-    //       cols="50"
-    //       placeholder="Add a comment..."
-    //       name="search"
-    //       value={body}
-    //       onChange={(event) => setBody(event.target.value)}
-    //     />
-    //   </label>
-    //   <button className="button" type="submit" disabled={buttonDisable}>
-    //     POST
-    //   </button>
-    // </form>
   );
 };
 

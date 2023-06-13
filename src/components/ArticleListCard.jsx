@@ -3,9 +3,6 @@ import {
   Card,
   CardHeader,
   CardMedia,
-  Typography,
-  CardContent,
-  Avatar,
   CardActionArea,
   Badge,
 } from "@mui/material";

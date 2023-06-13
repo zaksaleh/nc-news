@@ -3,20 +3,12 @@ import { useState, useEffect } from "react";
 import { fetchArticleCard } from "../api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
-import Comments from "./Comments";
 import { Grid } from "@mui/material";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [viewComments, setViewComments] = useState(false);
-
-  const handleViewComments = (event) => {
-    setViewComments((viewComments) => {
-      return !viewComments;
-    });
-  };
 
   useEffect(() => {
     setLoading(true);
@@ -46,12 +38,6 @@ const SingleArticle = () => {
             </Grid>
           );
         })}
-        {/* <section className="commentButton">
-          <button className="button" onClick={handleViewComments}>
-            View all comments
-          </button>
-          {viewComments ? <Comments /> : null}
-        </section> */}
       </Grid>
     </main>
   );

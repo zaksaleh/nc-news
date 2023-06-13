@@ -8,10 +8,7 @@ import {
   Typography,
   CardContent,
   IconButton,
-  Avatar,
-  CardActionArea,
   Badge,
-  TextField,
 } from "@mui/material";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
