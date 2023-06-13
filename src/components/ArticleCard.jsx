@@ -77,7 +77,7 @@ const ArticleCard = ({
               horizontal: "right",
             }}
           >
-            <FavoriteIcon sx={{ color: "#bb2e2e" }} />
+            <FavoriteIcon sx={{ color: "#35344c" }} />
           </Badge>
         </header>
 
@@ -90,6 +90,7 @@ const ArticleCard = ({
             objectFit: "contain",
           }}
         />
+
         <section className="like-dislike-container">
           <IconButton onClick={handleLike}>
             <ThumbUpIcon sx={{ color: "#35344c" }} />

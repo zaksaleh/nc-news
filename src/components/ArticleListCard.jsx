@@ -59,7 +59,7 @@ const ArticleListCard = ({
               horizontal: "right",
             }}
           >
-            <FavoriteIcon sx={{ color: "#d92e2e" }} />
+            <FavoriteIcon sx={{ color: "#35344c" }} />
           </Badge>
 
           <Badge
@@ -70,7 +70,7 @@ const ArticleListCard = ({
               horizontal: "left",
             }}
           >
-            <CommentIcon sx={{ color: "#2c3ba6" }} />
+            <CommentIcon sx={{ color: "#35344c" }} />
           </Badge>
         </section>
       </Card>
