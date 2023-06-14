@@ -6,7 +6,7 @@ import { UserContext } from "../contexts/UserContext";
 import { IconButton } from "@mui/material";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 
-const AddComment = ({ err, setErr, setComments }) => {
+const AddComment = ({ setCommentErr, setComments }) => {
   const { article_id } = useParams();
   const { user, isLoggedIn } = useContext(UserContext);
   const [body, setBody] = useState("");
@@ -33,19 +33,19 @@ const AddComment = ({ err, setErr, setComments }) => {
     setBody([]);
 
     if (body.length === 0) {
-      setErr("No Information! Please try again!");
+      setCommentErr("No Information! Please try again!");
       setButtonDisable(false);
     } else {
       postComment(article_id, newComment)
         .then((addedComment) => {
           setComments((currentComments) => {
             setButtonDisable(false);
-            setErr(null);
+            setCommentErr(null);
             return [addedComment, ...currentComments];
           });
         })
         .catch((err) => {
-          setErr("No Information! Please try again!");
+          setCommentErr("Please sign in to add a comment!");
         });
     }
   };

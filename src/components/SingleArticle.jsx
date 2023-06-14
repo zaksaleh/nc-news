@@ -4,11 +4,14 @@ import { fetchArticleCard } from "../api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 import { Grid } from "@mui/material";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [comments, setComments] = useState([]);
+  const [commentErr, setCommentErr] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -28,16 +31,26 @@ const SingleArticle = () => {
         direction="column"
         alignItems={"center"}
         justifyContent="center"
-        // marginLeft="3%"
-        // marginRight="3%"
       >
         {article.map((article) => {
           return (
             <Grid key={article.article_id}>
-              <ArticleCard key={article.article_id} {...article} />
+              <ArticleCard
+                key={article.article_id}
+                {...article}
+                setComments={setComments}
+                setCommentErr={setCommentErr}
+              />
             </Grid>
           );
         })}
+
+        <Comments
+          comments={comments}
+          setComments={setComments}
+          commentErr={commentErr}
+          setCommentErr={setCommentErr}
+        />
       </Grid>
     </main>
   );

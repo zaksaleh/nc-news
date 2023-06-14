@@ -4,7 +4,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const CommentList = ({ body, author, votes }) => {
   return (
-    <main>
+    <main className="comment-card">
       <Card>
         <CardHeader
           title={body}
