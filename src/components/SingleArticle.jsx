@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { fetchArticleCard } from "../api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
-import { Grid } from "@mui/material";
 import Comments from "./Comments";
 
 const SingleArticle = () => {
@@ -25,33 +24,23 @@ const SingleArticle = () => {
     <Loading />
   ) : (
     <main className="article">
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems={"center"}
-        justifyContent="center"
-      >
-        {article.map((article) => {
-          return (
-            <Grid key={article.article_id}>
-              <ArticleCard
-                key={article.article_id}
-                {...article}
-                setComments={setComments}
-                setCommentErr={setCommentErr}
-              />
-            </Grid>
-          );
-        })}
+      {article.map((article) => {
+        return (
+          <ArticleCard
+            key={article.article_id}
+            {...article}
+            setComments={setComments}
+            setCommentErr={setCommentErr}
+          />
+        );
+      })}
 
-        <Comments
-          comments={comments}
-          setComments={setComments}
-          commentErr={commentErr}
-          setCommentErr={setCommentErr}
-        />
-      </Grid>
+      <Comments
+        comments={comments}
+        setComments={setComments}
+        commentErr={commentErr}
+        setCommentErr={setCommentErr}
+      />
     </main>
   );
 };

@@ -31,13 +31,14 @@
 }
 
 .comment-card {
-  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
-/* .comment-container {
-  margin-left: 20%;
-  margin-right: 20%;
-} */
+.comment-container {
+  max-height: 137.5vh;
+  overflow-y: scroll;
+  padding-bottom: 3%;
+}
 
 .plus-comment {
   display: flex;

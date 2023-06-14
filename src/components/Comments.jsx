@@ -2,12 +2,9 @@ import { useState, useEffect } from "react";
 import { fetchComments } from "../api";
 import { useParams } from "react-router-dom";
 import CommentList from "./CommentList";
-import AddComment from "./AddComment";
 
 const Comments = ({ comments, setComments, commentErr, setCommentErr }) => {
   const { article_id } = useParams();
-  // const [comments, setComments] = useState([]);
-  const [err, setErr] = useState(null);
 
   useEffect(() => {
     fetchComments(article_id).then((comments) => {
