@@ -89,9 +89,10 @@
 }
 
 .article-home {
-  padding-top: 2%;
-  margin-left: 3%;
-  margin-right: 3%;
+  padding-top: 3.5vh;
+  padding-bottom: 8vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
 .image-link {
@@ -131,6 +132,10 @@
   margin-left: 1%;
   margin-right: 1%;
   padding-top: 2%;
+}
+
+.card-container {
+  min-width: 800px;
 }
 
 .Container {
