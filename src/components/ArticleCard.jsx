@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { addVotesPatch } from "../api";
-import Comments from "./Comments";
+import AddComment from "./AddComment";
 import {
   Card,
   CardHeader,
@@ -26,6 +26,8 @@ const ArticleCard = ({
   votes,
   article_img_url,
   comment_count,
+  setComments,
+  setCommentErr,
 }) => {
   const [addVote, setAddVote] = useState(votes);
   const [err, setErr] = useState(null);
@@ -91,6 +93,8 @@ const ArticleCard = ({
           }}
         />
 
+        <section>{err ? <h3>{err}</h3> : null}</section>
+
         <section className="like-dislike-container">
           <IconButton onClick={handleLike}>
             <ThumbUpIcon sx={{ color: "#35344c" }} />
@@ -105,40 +109,9 @@ const ArticleCard = ({
             {body}
           </Typography>
         </CardContent>
-        {/* <Badge
-          badgeContent={comment_count}
-          color="secondary"
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-        >
-          <CommentIcon sx={{ color: "blue" }} />
-        </Badge> */}
-        <Comments />
+        <AddComment setComments={setComments} setCommentErr={setCommentErr} />
       </Card>
     </main>
-
-    //     <section className="likeContainer">
-    //       {err ? <p>{err}</p> : null}
-    //       <button className="button" onClick={handleLike}>
-    //         LIKE
-    //       </button>
-    //       <button className="button" onClick={handleDislike}>
-    //         DISLIKE
-    //       </button>
-    //     </section>
-
-    //     <p className="body">{body}</p>
-    //     <div className="Container">
-    //       <p>Topic: {topic}</p>
-    //       <p>Author: {author}</p>
-    //       <p>Votes: {addVote}</p>
-    //       <p>Comments: {comment_count}</p>
-    //     </div>
-    //     <br></br>
-    //   </li>
-    // </main>
   );
 };
 
