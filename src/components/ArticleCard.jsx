@@ -27,6 +27,7 @@ const ArticleCard = ({
   article_img_url,
   comment_count,
   setComments,
+  commentErr,
   setCommentErr,
 }) => {
   const [addVote, setAddVote] = useState(votes);
@@ -109,6 +110,7 @@ const ArticleCard = ({
             {body}
           </Typography>
         </CardContent>
+        <section>{commentErr ? <h3>{commentErr}</h3> : null}</section>
         <AddComment setComments={setComments} setCommentErr={setCommentErr} />
       </Card>
     </main>

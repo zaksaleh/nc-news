@@ -27,7 +27,7 @@ const CommentList = ({ body, author, votes }) => {
               horizontal: "right",
             }}
           >
-            <FavoriteIcon sx={{ color: "#bb2e2e" }} />
+            <FavoriteIcon sx={{ color: "#35344c" }} />
           </Badge>
         </section>
       </Card>

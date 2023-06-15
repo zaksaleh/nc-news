@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { fetchComments } from "../api";
 import { useParams } from "react-router-dom";
 import CommentList from "./CommentList";
 
-const Comments = ({ comments, setComments, commentErr, setCommentErr }) => {
+const Comments = ({ comments, setComments, setCommentErr }) => {
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -15,7 +15,6 @@ const Comments = ({ comments, setComments, commentErr, setCommentErr }) => {
 
   return (
     <main className="comment-container">
-      <section>{commentErr ? <h3>{commentErr}</h3> : null}</section>
       <section>
         {comments.map((comment) => {
           return <CommentList key={comment.comment_id} {...comment} />;

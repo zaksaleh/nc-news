@@ -30,6 +30,7 @@ const SingleArticle = () => {
             key={article.article_id}
             {...article}
             setComments={setComments}
+            commentErr={commentErr}
             setCommentErr={setCommentErr}
           />
         );
@@ -38,7 +39,6 @@ const SingleArticle = () => {
       <Comments
         comments={comments}
         setComments={setComments}
-        commentErr={commentErr}
         setCommentErr={setCommentErr}
       />
     </main>
