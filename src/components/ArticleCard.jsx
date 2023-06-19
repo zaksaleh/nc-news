@@ -10,7 +10,7 @@ import {
   IconButton,
   Badge,
 } from "@mui/material";
-
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CommentIcon from "@mui/icons-material/Comment";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
@@ -53,6 +53,14 @@ const ArticleCard = ({
     });
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#ddc2c7",
+      },
+    },
+  });
+
   return (
     <main className="article-card-container">
       <Card sx={{ minWidth: 150, maxWidth: 750, minHeight: 800 }}>
@@ -72,16 +80,18 @@ const ArticleCard = ({
             }}
             subheader={`${author} posted on: ${created_at} in ${topic}`}
           />
-          <Badge
-            badgeContent={addVote}
-            color="secondary"
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-          >
-            <FavoriteIcon sx={{ color: "#35344c" }} />
-          </Badge>
+          <ThemeProvider theme={theme}>
+            <Badge
+              badgeContent={addVote}
+              color="primary"
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <FavoriteIcon sx={{ color: "#35344c" }} />
+            </Badge>
+          </ThemeProvider>
         </header>
 
         <CardMedia

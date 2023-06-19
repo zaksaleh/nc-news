@@ -6,8 +6,6 @@ import { Avatar } from "@mui/material";
 const NavBar = () => {
   const { user, isLoggedIn } = useContext(UserContext);
 
-  // console.log(user);
-
   return (
     <div className="navbar">
       <Link to="/Articles" style={{ textDecoration: "none" }}>
