@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { addVotesPatch } from "../api";
 import AddComment from "./AddComment";
 import {
@@ -80,18 +80,31 @@ const ArticleCard = ({
             }}
             subheader={`${author} posted on: ${created_at} in ${topic}`}
           />
-          <ThemeProvider theme={theme}>
-            <Badge
-              badgeContent={addVote}
-              color="primary"
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-            >
-              <FavoriteIcon sx={{ color: "#35344c" }} />
-            </Badge>
-          </ThemeProvider>
+
+          <section>
+            <ThemeProvider theme={theme}>
+              <Badge
+                badgeContent={addVote}
+                color="primary"
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+              >
+                <FavoriteIcon sx={{ color: "#35344c" }} />
+              </Badge>
+              <Badge
+                badgeContent={comment_count}
+                color="primary"
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+              >
+                <CommentIcon sx={{ color: "#35344c" }} />
+              </Badge>
+            </ThemeProvider>
+          </section>
         </header>
 
         <CardMedia
