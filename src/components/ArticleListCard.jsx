@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CommentIcon from "@mui/icons-material/Comment";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const ArticleListCard = ({
   article_id,
@@ -19,6 +20,14 @@ const ArticleListCard = ({
   article_img_url,
   comment_count,
 }) => {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#ddc2c7",
+      },
+    },
+  });
+
   return (
     <main className="mui-card">
       <Card style={{ width: "100%", height: "100%" }}>
@@ -51,27 +60,29 @@ const ArticleListCard = ({
           />
         </header>
         <section className="icon-container">
-          <Badge
-            badgeContent={votes}
-            color="secondary"
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-          >
-            <FavoriteIcon sx={{ color: "#35344c" }} />
-          </Badge>
+          <ThemeProvider theme={theme}>
+            <Badge
+              badgeContent={votes}
+              color="primary"
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <FavoriteIcon sx={{ color: "#35344c" }} />
+            </Badge>
 
-          <Badge
-            badgeContent={comment_count}
-            color="secondary"
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-          >
-            <CommentIcon sx={{ color: "#35344c" }} />
-          </Badge>
+            <Badge
+              badgeContent={comment_count}
+              color="primary"
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <CommentIcon sx={{ color: "#35344c" }} />
+            </Badge>
+          </ThemeProvider>
         </section>
       </Card>
     </main>

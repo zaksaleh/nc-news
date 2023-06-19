@@ -6,6 +6,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const Header = () => {
   const [topic, setTopic] = useState("");
@@ -24,6 +25,19 @@ const Header = () => {
     }
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#ddc2c7",
+      },
+      text: {
+        primary: "#030101",
+      },
+      background: {
+        main: "#35344c",
+      },
+    },
+  });
   // const handleTopicSubmit = (event) => {
   //   event.preventDefault();
   //   const formData = new FormData(event.target);
@@ -40,24 +54,28 @@ const Header = () => {
       </Link>
 
       <section className="search-container">
-        <Box sx={{ minWidth: 100, minHeight: 10 }}>
-          <FormControl
-            fullWidth
-            size="small"
-            color="secondary"
-            sx={{
-              color: "white",
-            }}
-          >
-            <InputLabel>Topics</InputLabel>
-            <Select value={topic} label="Topics" onChange={handleTopicSubmit}>
-              <MenuItem value="articles">All</MenuItem>
-              <MenuItem value="cooking">Cooking</MenuItem>
-              <MenuItem value="coding">Coding</MenuItem>
-              <MenuItem value="football">Football</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
+        <ThemeProvider theme={theme}>
+          <Box sx={{ minWidth: 100, minHeight: 10 }}>
+            <FormControl fullWidth size="small" color="primary">
+              <InputLabel sx={{ color: "primary.main" }}>Topics</InputLabel>
+              <Select
+                value={topic}
+                label="Topics"
+                sx={{
+                  bgcolor: "background.main",
+                  color: "text.main",
+                  fontWeight: "medium",
+                }}
+                onChange={handleTopicSubmit}
+              >
+                <MenuItem value="articles">All</MenuItem>
+                <MenuItem value="cooking">Cooking</MenuItem>
+                <MenuItem value="coding">Coding</MenuItem>
+                <MenuItem value="football">Football</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+        </ThemeProvider>
       </section>
     </main>
 

@@ -47,3 +47,10 @@
 .text-area {
   resize: none;
 }
+
+.delete-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: -18px;
+}
